@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<configuration>
+  <appSettings>
+        <add key="userEmail" value="email@email.email"/>
+        <add key="userPassword" value="password"/>
+        <add key="ClientId" value="clientid"/>
+        <add key="ClientSecret" value="clientsecret"/>
+  </appSettings>
+  <system.net>
+    <settings>
+      <httpWebRequest useUnsafeHeaderParsing="true" />
+    </settings>
+  </system.net>
+</configuration>
