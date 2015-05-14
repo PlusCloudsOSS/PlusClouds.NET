@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using PlusClouds.Net.Response;
+using PlusClouds.Net.Response.Auth;
 using RestSharp;
 
 namespace PlusClouds.Net.Resources
@@ -16,7 +16,7 @@ namespace PlusClouds.Net.Resources
 
         public AuthenticateResponse Authenticate()
         {
-           AuthenticateResponse = PlusClouds.ApiClient.Execute<AuthenticateResponse>(authenticate, Method.POST,
+            AuthenticateResponse = PlusClouds.ApiClient.Execute<AuthenticateResponse>(authenticate, Method.POST,
                 new KeyValuePair<string, object>("clientId", PlusClouds.Config.ClientId),
                 new KeyValuePair<string, object>("clientSecret", PlusClouds.Config.ClientSecret));
             return AuthenticateResponse;

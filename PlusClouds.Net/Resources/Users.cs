@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using PlusClouds.Net.Request;
-using PlusClouds.Net.Response;
+using PlusClouds.Net.Request.Users;
+using PlusClouds.Net.Response.Users;
 using RestSharp;
 
 namespace PlusClouds.Net.Resources
@@ -17,7 +17,7 @@ namespace PlusClouds.Net.Resources
         public UserAuthenticateResponse Authenticate(UserAuthenticateRequest userAuthenticateRequest)
         {
             return PlusClouds.ApiClient.Execute<UserAuthenticateResponse>(authenticate, Method.POST,
-                new KeyValuePair<string, object>("accessToken", base.AuthenticateResponse.AccessToken),
+                new KeyValuePair<string, object>("accessToken", AuthenticateResponse.AccessToken),
                 new KeyValuePair<string, object>("email", userAuthenticateRequest.Email),
                 new KeyValuePair<string, object>("password", userAuthenticateRequest.Password));
         }
@@ -25,8 +25,12 @@ namespace PlusClouds.Net.Resources
         public UserSessionResponse GetSession(string sid)
         {
             return PlusClouds.ApiClient.Execute<UserSessionResponse>(getSession, Method.GET,
-                new KeyValuePair<string, object>("accessToken", base.AuthenticateResponse.AccessToken),
+                new KeyValuePair<string, object>("accessToken", AuthenticateResponse.AccessToken),
                 new KeyValuePair<string, object>("sid", sid));
+        }
+
+        public UserCreateResponse Create(UserCreateRequest userCreateRequest)
+        {
         }
     }
 }

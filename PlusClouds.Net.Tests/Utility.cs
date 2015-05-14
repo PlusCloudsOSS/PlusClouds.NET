@@ -4,14 +4,6 @@ namespace PlusClouds.Net.Tests
 {
     public static class Utility
     {
-        public static PlusClouds GetAuthenticatedClient()
-        {
-            var client = new PlusClouds(ClientId, ClientSecret);
-            client.Auth.Authenticate();
-
-            return client;
-        }
-
         public static string UserEmail
         {
             get { return ConfigurationManager.AppSettings["userEmail"]; }
@@ -30,6 +22,14 @@ namespace PlusClouds.Net.Tests
         public static string ClientSecret
         {
             get { return ConfigurationManager.AppSettings["ClientSecret"]; }
+        }
+
+        public static PlusClouds GetAuthenticatedClient()
+        {
+            var client = new PlusClouds(ClientId, ClientSecret);
+            client.Auth.Authenticate();
+
+            return client;
         }
     }
 }

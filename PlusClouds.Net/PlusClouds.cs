@@ -1,6 +1,6 @@
 ﻿using System.Net;
 using PlusClouds.Net.Resources;
-using PlusClouds.Net.Response;
+using PlusClouds.Net.Response.Auth;
 using RestSharp;
 
 namespace PlusClouds.Net
@@ -21,7 +21,6 @@ namespace PlusClouds.Net
         internal PlusCloudsConfig Config { get; set; }
         internal RestClient ApiClient { get; set; }
         internal AuthenticateResponse AuthenticateResponse { get; set; }
-
         public Auth Auth { get; set; }
         public Users Users { get; set; }
 

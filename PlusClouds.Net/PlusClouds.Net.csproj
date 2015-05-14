@@ -46,32 +46,34 @@
   <ItemGroup>
     <Compile Include="PlusCloudsExtensions.cs" />
     <Compile Include="Resources\BaseResource.cs" />
-    <Compile Include="Request\UserAuthenticateRequest.cs" />
-    <Compile Include="Response\Balance.cs" />
-    <Compile Include="Response\Company.cs" />
-    <Compile Include="Response\Country.cs" />
-    <Compile Include="Response\CurrencyModel.cs" />
-    <Compile Include="Response\UserAuthenticateResponse.cs" />
+    <Compile Include="Request\Users\UserAuthenticateRequest.cs" />
+    <Compile Include="Response\Users\Balance.cs" />
+    <Compile Include="Response\Users\Company.cs" />
+    <Compile Include="Response\Users\Country.cs" />
+    <Compile Include="Response\Users\CurrencyModel.cs" />
+    <Compile Include="Response\Users\UserAuthenticateResponse.cs" />
     <Compile Include="Resources\Users.cs" />
     <Compile Include="Response\BaseResponse.cs" />
-    <Compile Include="Request\AuthenticateRequest.cs" />
+    <Compile Include="Request\Auth\AuthenticateRequest.cs" />
     <Compile Include="PlusClouds.cs" />
-    <Compile Include="Request\IAuthenticateRequest.cs" />
+    <Compile Include="Request\Auth\IAuthenticateRequest.cs" />
     <Compile Include="Resources\Auth.cs" />
     <Compile Include="PlusCloudsConfig.cs" />
     <Compile Include="Exceptions\PlusConfigInvalidException.cs" />
     <Compile Include="Response\PlusResponseParent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Response\AuthenticateResponse.cs" />
-    <Compile Include="Response\UserDefinition.cs" />
-    <Compile Include="Response\UserSession.cs" />
-    <Compile Include="Response\UserSessionResponse.cs" />
+    <Compile Include="Response\Auth\AuthenticateResponse.cs" />
+    <Compile Include="Response\Users\UserDefinition.cs" />
+    <Compile Include="Response\Users\UserSession.cs" />
+    <Compile Include="Response\Users\UserSessionResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Response\Shared\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

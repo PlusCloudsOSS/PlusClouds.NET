@@ -1,6 +1,6 @@
 using System;
 using PlusClouds.Net.Exceptions;
-using PlusClouds.Net.Request;
+using PlusClouds.Net.Request.Auth;
 
 namespace PlusClouds.Net
 {

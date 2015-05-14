@@ -1,4 +1,4 @@
-﻿using PlusClouds.Net.Request;
+﻿using PlusClouds.Net.Request.Users;
 using Xunit;
 
 namespace PlusClouds.Net.Tests
@@ -16,7 +16,6 @@ namespace PlusClouds.Net.Tests
             });
 
             Assert.True(userData.Result);
-
             client.Auth.Destroy();
         }
 
@@ -31,9 +30,7 @@ namespace PlusClouds.Net.Tests
             });
 
             var session = client.Users.GetSession(userData.Session.Id);
-
             Assert.True(session.Result);
-
             client.Auth.Destroy();
         }
     }

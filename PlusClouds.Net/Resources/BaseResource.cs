@@ -1,4 +1,4 @@
-using PlusClouds.Net.Response;
+using PlusClouds.Net.Response.Auth;
 
 namespace PlusClouds.Net.Resources
 {
