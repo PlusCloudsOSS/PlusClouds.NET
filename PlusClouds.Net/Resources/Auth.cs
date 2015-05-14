@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using PlusClouds.Net.Response;
 using RestSharp;
 
@@ -13,43 +14,22 @@ namespace PlusClouds.Net.Resources
         {
         }
 
-        public IRestResponse<PlusResponseParent<AuthenticateResponse>> LastAuthResponse { get; set; }
-
         public AuthenticateResponse Authenticate()
         {
-            var response =
-                PlusClouds.ApiClient.Execute<PlusResponseParent<AuthenticateResponse>>(new RestRequest(authenticate,
-                    Method.POST)
-                    .AddParameter(new Parameter
-                    {
-                        Name = "clientId",
-                        Type = ParameterType.GetOrPost,
-                        Value = PlusClouds.Config.ClientId
-                    })
-                    .AddParameter(new Parameter
-                    {
-                        Name = "clientSecret",
-                        Type = ParameterType.GetOrPost,
-                        Value = PlusClouds.Config.ClientSecret
-                    }));
-
-            LastAuthResponse = response;
-            return response.Data.Response;
+           AuthenticateResponse = PlusClouds.ApiClient.Execute<AuthenticateResponse>(authenticate, Method.POST,
+                new KeyValuePair<string, object>("clientId", PlusClouds.Config.ClientId),
+                new KeyValuePair<string, object>("clientSecret", PlusClouds.Config.ClientSecret));
+            return AuthenticateResponse;
         }
 
         public AuthenticateResponse AccessToken()
         {
-            var response =
-                PlusClouds.ApiClient.Execute<PlusResponseParent<AuthenticateResponse>>(new RestRequest(accessToken,
-                    Method.GET));
-            LastAuthResponse = response;
-            return response.Data.Response;
+            return PlusClouds.ApiClient.Execute<AuthenticateResponse>(accessToken, Method.GET);
         }
 
         public bool Destroy()
         {
-            return PlusClouds.ApiClient.Execute(new RestRequest(destroy, Method.POST)).ResponseStatus ==
-                   ResponseStatus.Completed;
+            return PlusClouds.ApiClient.Execute(destroy).ResponseStatus == ResponseStatus.Completed;
         }
     }
 }

@@ -1,3 +1,5 @@
+using PlusClouds.Net.Response;
+
 namespace PlusClouds.Net.Resources
 {
     public abstract class BaseResource
@@ -7,17 +9,10 @@ namespace PlusClouds.Net.Resources
             PlusClouds = plusClouds;
         }
 
-        internal string AccessToken
+        internal AuthenticateResponse AuthenticateResponse
         {
-            get
-            {
-                if (PlusClouds.Auth.LastAuthResponse == null ||
-                    PlusClouds.Auth.LastAuthResponse.Data == null ||
-                    PlusClouds.Auth.LastAuthResponse.Data.Response == null)
-                    return string.Empty;
-
-                return PlusClouds.Auth.LastAuthResponse.Data.Response.AccessToken;
-            }
+            get { return PlusClouds.AuthenticateResponse; }
+            set { PlusClouds.AuthenticateResponse = value; }
         }
 
         internal PlusClouds PlusClouds { get; set; }
