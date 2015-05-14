@@ -6,6 +6,7 @@
     <add key="userPassword" value="password" />
     <add key="ClientId" value="clientid" />
     <add key="ClientSecret" value="clientsecret" />
+    <add key="AllowUserCreate" value="false" />
   </appSettings>
   <system.net>
     <settings>

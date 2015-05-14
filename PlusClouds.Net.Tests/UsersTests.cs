@@ -39,6 +39,8 @@ namespace PlusClouds.Net.Tests
         [Fact]
         public void UserCreate()
         {
+            if (!Utility.AllowUserCreate) return;
+
             var client = Utility.GetAuthenticatedClient();
             var ticks = DateTime.Now.Ticks.ToString().Substring(10);
 
@@ -57,6 +59,7 @@ namespace PlusClouds.Net.Tests
 
             Utility.Dump(SimpleJson.SerializeObject(user), SimpleJson.SerializeObject(createResponse));
             Assert.True(createResponse.Result);
+
         }
     }
 }

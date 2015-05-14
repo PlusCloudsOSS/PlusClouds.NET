@@ -12,7 +12,7 @@ namespace PlusClouds.Net
         public static TResponse Execute<TResponse>(this RestClient client, string resource, Method method,
             params KeyValuePair<string, object>[] parameters)
         {
-            var request = new RestRequest(resource, method);
+            var request = new RestRequest(resource, method) {RequestFormat = DataFormat.Json};
 
             foreach (var parameter in parameters)
             {
@@ -24,7 +24,8 @@ namespace PlusClouds.Net
                 });
             }
 
-            return client.Execute<PlusResponseParent<TResponse>>(request).Data.Response;
+            var restResponse = client.Execute<PlusResponseParent<TResponse>>(request);
+            return restResponse.Data.Response;
         }
 
         public static TResponse Execute<TResponse>(this RestClient client, string resource, Method method,
@@ -40,7 +41,10 @@ namespace PlusClouds.Net
 
         private static KeyValuePair<string, object>[] CreateParameters(this IRequest request)
         {
-            var properties = request.GetType().GetProperties();
+            var properties = request.GetType().GetProperties(
+                BindingFlags.Instance |
+                BindingFlags.NonPublic |
+                BindingFlags.Public);
             var parameterList = new List<KeyValuePair<string, object>>();
 
             foreach (var propertyInfo in properties)
