@@ -2,9 +2,9 @@
 
 Library for PlusClouds Api
 
-## Api Documment
+## Api Document
 https://plusclouds.com/community/articles/api
 
-## Dependency
+#### Dependency
 [RestSharp][restsharp]
 [restsharp]:       http://restsharp.org
