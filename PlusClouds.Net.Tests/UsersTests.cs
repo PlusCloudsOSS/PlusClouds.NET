@@ -1,4 +1,6 @@
-﻿using PlusClouds.Net.Request.Users;
+﻿using System;
+using PlusClouds.Net.Request.Users;
+using RestSharp;
 using Xunit;
 
 namespace PlusClouds.Net.Tests
@@ -29,9 +31,32 @@ namespace PlusClouds.Net.Tests
                 Password = Utility.UserPassword
             });
 
-            var session = client.Users.GetSession(userData.Session.Id);
+            var session = client.Users.GetSession(new UserGetSessionRequest {Sid = userData.Session.Id});
             Assert.True(session.Result);
             client.Auth.Destroy();
+        }
+
+        [Fact]
+        public void UserCreate()
+        {
+            var client = Utility.GetAuthenticatedClient();
+            var ticks = DateTime.Now.Ticks.ToString().Substring(10);
+
+            var user = new UserCreateRequest
+            {
+                Name = "PlusClouds.Net" + ticks,
+                Surname = ".Net Library",
+                AccountType = "PERSONEL",
+                Email = "PlusClouds" + ticks + "@vctor.net",
+                Password = Guid.NewGuid().ToString("N").Substring(0, 12)
+            };
+
+            user.ConfirmPassword = user.Password;
+
+            var createResponse = client.Users.Create(user);
+
+            Utility.Dump(SimpleJson.SerializeObject(user), SimpleJson.SerializeObject(createResponse));
+            Assert.True(createResponse.Result);
         }
     }
 }

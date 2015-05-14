@@ -1,4 +1,6 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
+using System.IO;
 
 namespace PlusClouds.Net.Tests
 {
@@ -30,6 +32,20 @@ namespace PlusClouds.Net.Tests
             client.Auth.Authenticate();
 
             return client;
+        }
+
+        public static void Dump(params string[] prm)
+        {
+            var path = Path.Combine(Directory.GetDirectoryRoot(Directory.GetCurrentDirectory())) +
+                       string.Format("{0}.txt", Guid.NewGuid().ToString("N"));
+
+            using (var sw = new StreamWriter(path, true))
+            {
+                foreach (var val in prm)
+                {
+                    sw.WriteLine(val);
+                }
+            }
         }
     }
 }

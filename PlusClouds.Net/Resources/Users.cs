@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using PlusClouds.Net.Request.Users;
 using PlusClouds.Net.Response.Users;
 using RestSharp;
@@ -9,6 +8,7 @@ namespace PlusClouds.Net.Resources
     {
         private const string authenticate = "users/authenticate";
         private const string getSession = "users/get-session";
+        private const string create = "users/create";
 
         public Users(PlusClouds plusClouds) : base(plusClouds)
         {
@@ -17,20 +17,19 @@ namespace PlusClouds.Net.Resources
         public UserAuthenticateResponse Authenticate(UserAuthenticateRequest userAuthenticateRequest)
         {
             return PlusClouds.ApiClient.Execute<UserAuthenticateResponse>(authenticate, Method.POST,
-                new KeyValuePair<string, object>("accessToken", AuthenticateResponse.AccessToken),
-                new KeyValuePair<string, object>("email", userAuthenticateRequest.Email),
-                new KeyValuePair<string, object>("password", userAuthenticateRequest.Password));
+                userAuthenticateRequest);
         }
 
-        public UserSessionResponse GetSession(string sid)
+        public UserSessionResponse GetSession(UserGetSessionRequest userGetSessionRequest)
         {
-            return PlusClouds.ApiClient.Execute<UserSessionResponse>(getSession, Method.GET,
-                new KeyValuePair<string, object>("accessToken", AuthenticateResponse.AccessToken),
-                new KeyValuePair<string, object>("sid", sid));
+            userGetSessionRequest.AccessToken = AuthenticateResponse.AccessToken;
+            return PlusClouds.ApiClient.Execute<UserSessionResponse>(getSession, Method.GET, userGetSessionRequest);
         }
 
         public UserCreateResponse Create(UserCreateRequest userCreateRequest)
         {
+            userCreateRequest.AccessToken = AuthenticateResponse.AccessToken;
+            return PlusClouds.ApiClient.Execute<UserCreateResponse>(create, Method.POST, userCreateRequest);
         }
     }
 }

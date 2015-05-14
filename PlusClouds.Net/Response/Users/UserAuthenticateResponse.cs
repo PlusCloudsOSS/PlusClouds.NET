@@ -1,3 +1,5 @@
+using PlusClouds.Net.Models;
+
 namespace PlusClouds.Net.Response.Users
 {
     public class UserAuthenticateResponse : BaseResponse

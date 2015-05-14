@@ -2,10 +2,10 @@
 
 <configuration>
   <appSettings>
-        <add key="userEmail" value="email@email.email"/>
-        <add key="userPassword" value="password"/>
-        <add key="ClientId" value="clientid"/>
-        <add key="ClientSecret" value="clientsecret"/>
+    <add key="userEmail" value="email@email.email" />
+    <add key="userPassword" value="password" />
+    <add key="ClientId" value="clientid" />
+    <add key="ClientSecret" value="clientsecret" />
   </appSettings>
   <system.net>
     <settings>

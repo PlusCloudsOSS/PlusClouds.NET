@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Response.Users
+namespace PlusClouds.Net.Models
 {
     public class Country
     {
