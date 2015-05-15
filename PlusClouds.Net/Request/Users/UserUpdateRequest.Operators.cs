@@ -18,7 +18,7 @@ namespace PlusClouds.Net.Request.Users
                 Address = user.Address,
                 Address2 = user.Address2,
                 Country = user.Country.Id,
-                //TODO: City = user.City.Id,
+                City = user.City,
                 ZipCode = user.Zip_code,
                 Phone = user.Phone,
                 CellPhone = user.Cellphone,
