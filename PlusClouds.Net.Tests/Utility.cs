@@ -28,7 +28,7 @@ namespace PlusClouds.Net.Tests
 
         public static bool AllowUserCreate
         {
-            get { return ConfigurationManager.AppSettings["AllowUserCreate"] == bool.TrueString; }
+            get { return ConfigurationManager.AppSettings["AllowUserCreate"].Equals(bool.TrueString, StringComparison.OrdinalIgnoreCase); }
         }
 
         public static PlusClouds GetAuthenticatedClient()
@@ -42,7 +42,7 @@ namespace PlusClouds.Net.Tests
         public static void Dump(params string[] prm)
         {
             var path = Path.Combine(Directory.GetDirectoryRoot(Directory.GetCurrentDirectory())) +
-                       string.Format("{0}.txt", Guid.NewGuid().ToString("N"));
+                       string.Format("{0}.txt", Guid.NewGuid().ToString("N").Substring(15) + DateTime.Now.Ticks);
 
             using (var sw = new StreamWriter(path, true))
             {

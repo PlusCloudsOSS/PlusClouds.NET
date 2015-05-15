@@ -1,8 +1,7 @@
 namespace PlusClouds.Net.Request.Users
 {
-    public class UserGetSessionRequest : IRequest
+    public class UserGetSessionRequest : AccessTokenizedRequest
     {
-        internal string AccessToken { get; set; }
         public string Sid { get; set; }
     }
 }

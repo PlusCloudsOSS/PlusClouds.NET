@@ -9,7 +9,7 @@ namespace PlusClouds.Net
 {
     internal static class Extensions
     {
-        public static TResponse Execute<TResponse>(this RestClient client, string resource, Method method,
+        public static TResponse Execute<TResponse>(this PlusClouds client, string resource, Method method,
             params KeyValuePair<string, object>[] parameters)
         {
             var request = new RestRequest(resource, method) {RequestFormat = DataFormat.Json};
@@ -24,19 +24,23 @@ namespace PlusClouds.Net
                 });
             }
 
-            var restResponse = client.Execute<PlusResponseParent<TResponse>>(request);
+            var restResponse = client.ApiClient.Execute<PlusResponseParent<TResponse>>(request);
             return restResponse.Data.Response;
         }
 
-        public static TResponse Execute<TResponse>(this RestClient client, string resource, Method method,
+        public static TResponse Execute<TResponse>(this PlusClouds client, string resource, Method method,
             IRequest request)
         {
+            var tokenizedRequest = request as AccessTokenizedRequest;
+            if (tokenizedRequest != null)
+                tokenizedRequest.AccessToken = client.AuthenticateResponse.AccessToken;
+
             return client.Execute<TResponse>(resource, method, request.CreateParameters());
         }
 
-        public static IRestResponse Execute(this RestClient client, string resource, Method method = Method.POST)
+        public static IRestResponse Execute(this PlusClouds client, string resource, Method method = Method.POST)
         {
-            return client.Execute(new RestRequest(resource, method));
+            return client.ApiClient.Execute(new RestRequest(resource, method));
         }
 
         private static KeyValuePair<string, object>[] CreateParameters(this IRequest request)

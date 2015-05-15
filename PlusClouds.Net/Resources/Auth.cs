@@ -16,7 +16,7 @@ namespace PlusClouds.Net.Resources
 
         public AuthenticateResponse Authenticate()
         {
-            AuthenticateResponse = PlusClouds.ApiClient.Execute<AuthenticateResponse>(authenticate, Method.POST,
+            AuthenticateResponse = PlusClouds.Execute<AuthenticateResponse>(authenticate, Method.POST,
                 new AuthenticateRequest
                 {
                     ClientId = PlusClouds.Config.ClientId,
@@ -28,12 +28,12 @@ namespace PlusClouds.Net.Resources
 
         public AuthenticateResponse AccessToken()
         {
-            return PlusClouds.ApiClient.Execute<AuthenticateResponse>(accessToken, Method.GET);
+            return PlusClouds.Execute<AuthenticateResponse>(accessToken, Method.GET);
         }
 
         public bool Destroy()
         {
-            return PlusClouds.ApiClient.Execute(destroy).ResponseStatus == ResponseStatus.Completed;
+            return PlusClouds.Execute(destroy).ResponseStatus == ResponseStatus.Completed;
         }
     }
 }
