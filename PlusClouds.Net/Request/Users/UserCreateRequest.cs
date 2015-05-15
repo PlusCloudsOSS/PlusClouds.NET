@@ -1,8 +1,7 @@
 namespace PlusClouds.Net.Request.Users
 {
-    public class UserCreateRequest : IRequest
+    public class UserCreateRequest : AccessTokenizedRequest
     {
-        internal string AccessToken { get; set; }
         public string AccountType { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

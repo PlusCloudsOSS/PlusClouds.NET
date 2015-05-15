@@ -46,11 +46,14 @@
   <ItemGroup>
     <Compile Include="Attributes\NameAttribute.cs" />
     <Compile Include="PlusCloudsExtensions.cs" />
+    <Compile Include="Request\AccessTokenizedRequest.cs" />
     <Compile Include="Request\Users\UserGetSessionRequest.cs" />
     <Compile Include="Resources\BaseResource.cs" />
     <Compile Include="Request\Users\UserAuthenticateRequest.cs" />
     <Compile Include="Request\IRequest.cs" />
     <Compile Include="Request\Users\UserCreateRequest.cs" />
+    <Compile Include="Request\Users\UserActivationRequest.cs" />
+    <Compile Include="Response\Users\UserActivationResponse.cs" />
     <Compile Include="Response\Users\UserCreateResponse.cs" />
     <Compile Include="Models\Balance.cs" />
     <Compile Include="Models\Company.cs" />

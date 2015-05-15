@@ -10,6 +10,7 @@ namespace PlusClouds.Net.Resources
         private const string getSession = "users/get-session";
         private const string create = "users/create";
         private const string destroySession = "users/destroy-session";
+        private const string activate = "users/activate";
 
         public Users(PlusClouds plusClouds) : base(plusClouds)
         {
@@ -17,25 +18,27 @@ namespace PlusClouds.Net.Resources
 
         public UserAuthenticateResponse Authenticate(UserAuthenticateRequest userAuthenticateRequest)
         {
-            userAuthenticateRequest.AccessToken = AuthenticateResponse.AccessToken;
-            return PlusClouds.ApiClient.Execute<UserAuthenticateResponse>(authenticate, Method.POST, userAuthenticateRequest);
+            return PlusClouds.Execute<UserAuthenticateResponse>(authenticate, Method.POST, userAuthenticateRequest);
         }
 
         public UserSessionResponse GetSession(UserGetSessionRequest userGetSessionRequest)
         {
-            userGetSessionRequest.AccessToken = AuthenticateResponse.AccessToken;
-            return PlusClouds.ApiClient.Execute<UserSessionResponse>(getSession, Method.GET, userGetSessionRequest);
+            return PlusClouds.Execute<UserSessionResponse>(getSession, Method.GET, userGetSessionRequest);
         }
 
         public bool DestroySession()
         {
-            return PlusClouds.ApiClient.Execute(destroySession, Method.GET).ResponseStatus == ResponseStatus.Completed;
+            return PlusClouds.Execute(destroySession, Method.GET).ResponseStatus == ResponseStatus.Completed;
         }
 
         public UserCreateResponse Create(UserCreateRequest userCreateRequest)
         {
-            userCreateRequest.AccessToken = AuthenticateResponse.AccessToken;
-            return PlusClouds.ApiClient.Execute<UserCreateResponse>(create, Method.POST, userCreateRequest);
+            return PlusClouds.Execute<UserCreateResponse>(create, Method.POST, userCreateRequest);
+        }
+
+        public UserActivationResponse Activate(UserActivationRequest userActivationRequest)
+        {
+            return PlusClouds.Execute<UserActivationResponse>(activate, Method.POST, userActivationRequest);
         }
     }
 }

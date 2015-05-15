@@ -60,6 +60,15 @@ namespace PlusClouds.Net.Tests
             Utility.Dump(SimpleJson.SerializeObject(user), SimpleJson.SerializeObject(createResponse));
             Assert.True(createResponse.Result);
 
+
+            var activation = client.Users.Activate(new UserActivationRequest
+            {
+                Email = user.Email,
+                Code = createResponse.ActivationCode
+            });
+
+            Assert.True(activation.Result);
+            Assert.Equal(1, activation.RowsAffected);
         }
     }
 }
