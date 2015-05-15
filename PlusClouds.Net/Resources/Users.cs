@@ -1,4 +1,5 @@
 using PlusClouds.Net.Request.Users;
+using PlusClouds.Net.Response.Shared;
 using PlusClouds.Net.Response.Users;
 using RestSharp;
 
@@ -11,6 +12,7 @@ namespace PlusClouds.Net.Resources
         private const string create = "users/create";
         private const string destroySession = "users/destroy-session";
         private const string activate = "users/activate";
+        private const string update = "users/update";
 
         public Users(PlusClouds plusClouds) : base(plusClouds)
         {
@@ -36,9 +38,14 @@ namespace PlusClouds.Net.Resources
             return PlusClouds.Execute<UserCreateResponse>(create, Method.POST, userCreateRequest);
         }
 
-        public UserActivationResponse Activate(UserActivationRequest userActivationRequest)
+        public UpdateResponse Activate(UserActivationRequest userActivationRequest)
         {
-            return PlusClouds.Execute<UserActivationResponse>(activate, Method.POST, userActivationRequest);
+            return PlusClouds.Execute<UpdateResponse>(activate, Method.POST, userActivationRequest);
+        }
+
+        public UpdateResponse Update(UserUpdateRequest userUpdateRequest)
+        {
+            return PlusClouds.Execute<UpdateResponse>(update, Method.POST, userUpdateRequest);
         }
     }
 }

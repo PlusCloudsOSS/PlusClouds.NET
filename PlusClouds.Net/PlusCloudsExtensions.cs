@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using PlusClouds.Net.Attributes;
 using PlusClouds.Net.Request;
@@ -35,7 +36,7 @@ namespace PlusClouds.Net
             if (tokenizedRequest != null)
                 tokenizedRequest.AccessToken = client.AuthenticateResponse.AccessToken;
 
-            return client.Execute<TResponse>(resource, method, request.CreateParameters());
+            return client.Execute<TResponse>(resource, method, request.CreateParameters(client.Config));
         }
 
         public static IRestResponse Execute(this PlusClouds client, string resource, Method method = Method.POST)
@@ -43,7 +44,8 @@ namespace PlusClouds.Net
             return client.ApiClient.Execute(new RestRequest(resource, method));
         }
 
-        private static KeyValuePair<string, object>[] CreateParameters(this IRequest request)
+        private static KeyValuePair<string, object>[] CreateParameters(this IRequest request,
+            PlusCloudsConfig plusCloudsConfig)
         {
             var properties = request.GetType().GetProperties(
                 BindingFlags.Instance |
@@ -62,7 +64,16 @@ namespace PlusClouds.Net
                 if (string.IsNullOrEmpty(name))
                     name = char.ToLowerInvariant(propertyInfo.Name[0]) + propertyInfo.Name.Substring(1);
 
-                var value = propertyInfo.GetValue(request);
+                object value = null;
+
+                if (propertyInfo.PropertyType == typeof (DateTime))
+                {
+                    value = ((DateTime) propertyInfo.GetValue(request)).ToString(plusCloudsConfig.DateTimeFormat);
+                }
+                else
+                {
+                    value = propertyInfo.GetValue(request);
+                }
 
                 parameterList.Add(new KeyValuePair<string, object>(name, value));
             }
