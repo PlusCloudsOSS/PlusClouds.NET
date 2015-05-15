@@ -31,9 +31,26 @@ namespace PlusClouds.Net.Tests
                 Password = Utility.UserPassword
             });
 
-            var session = client.Users.GetSession(new UserGetSessionRequest {Sid = userData.Session.Id});
+            var session = client.Users.GetSession(new UserGetSessionRequest {SessionId = userData.Session.Id});
             Assert.True(session.Result);
-            client.Auth.Destroy();
+
+            var updateRequest = ((UserUpdateRequest) userData.User);
+            updateRequest.Address = Guid.NewGuid().ToString("N");
+            updateRequest.SessionId = session.Session.Id;
+
+            var updateResponse = client.Users.Update(updateRequest);
+            Assert.True(updateResponse.Result);
+            Assert.Equal(1, updateResponse.RowsAffected);
+
+            userData = client.Users.Authenticate(new UserAuthenticateRequest
+            {
+                Email = Utility.UserEmail,
+                Password = Utility.UserPassword
+            });
+
+            Assert.Equal(updateRequest.Address, userData.User.Address);
+
+            Assert.True(client.Auth.Destroy());
         }
 
         [Fact]
@@ -59,7 +76,6 @@ namespace PlusClouds.Net.Tests
 
             Utility.Dump(SimpleJson.SerializeObject(user), SimpleJson.SerializeObject(createResponse));
             Assert.True(createResponse.Result);
-
 
             var activation = client.Users.Activate(new UserActivationRequest
             {

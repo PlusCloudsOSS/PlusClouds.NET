@@ -28,7 +28,11 @@ namespace PlusClouds.Net.Tests
 
         public static bool AllowUserCreate
         {
-            get { return ConfigurationManager.AppSettings["AllowUserCreate"].Equals(bool.TrueString, StringComparison.OrdinalIgnoreCase); }
+            get
+            {
+                return ConfigurationManager.AppSettings["AllowUserCreate"].Equals(bool.TrueString,
+                    StringComparison.OrdinalIgnoreCase);
+            }
         }
 
         public static PlusClouds GetAuthenticatedClient()
