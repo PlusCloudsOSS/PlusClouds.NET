@@ -13,6 +13,7 @@ namespace PlusClouds.Net.Resources
         private const string destroySession = "users/destroy-session";
         private const string activate = "users/activate";
         private const string update = "users/update";
+        private const string changePassword = "users/change-password";
 
         public Users(PlusClouds plusClouds) : base(plusClouds)
         {
@@ -46,6 +47,11 @@ namespace PlusClouds.Net.Resources
         public UpdateResponse Update(UserUpdateRequest userUpdateRequest)
         {
             return PlusClouds.Execute<UpdateResponse>(update, Method.POST, userUpdateRequest);
+        }
+
+        public UpdateResponse ChangePassword(UserChangePasswordRequest userChangePasswordRequest)
+        {
+            return PlusClouds.Execute<UpdateResponse>(changePassword, Method.POST, userChangePasswordRequest);
         }
     }
 }
