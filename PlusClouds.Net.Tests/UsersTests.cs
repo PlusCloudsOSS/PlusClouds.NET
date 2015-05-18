@@ -85,6 +85,25 @@ namespace PlusClouds.Net.Tests
 
             Assert.True(activation.Result);
             Assert.Equal(1, activation.RowsAffected);
+
+            var userSession = client.Users.Authenticate(new UserAuthenticateRequest
+            {
+                Email = user.Email,
+                Password = user.Password
+            });
+            
+            var newPassword = Guid.NewGuid().ToString("N").Substring(0, 12);
+
+            var passwordUpdateRequest = client.Users.ChangePassword(new UserChangePasswordRequest
+            {
+                SessionId = userSession.Session.Id,
+                OldPassword = user.Password,
+                Password = newPassword,
+                ConfirmPassword = newPassword
+            });
+
+            Assert.True(passwordUpdateRequest.Result);
+            Assert.Equal(1, passwordUpdateRequest.RowsAffected);
         }
     }
 }
