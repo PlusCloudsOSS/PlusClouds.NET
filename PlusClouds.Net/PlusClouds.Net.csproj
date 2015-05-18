@@ -56,6 +56,8 @@
     <Compile Include="Request\Users\UserActivationRequest.cs" />
     <Compile Include="Request\Users\UserUpdateRequest.cs" />
     <Compile Include="Request\Users\UserChangePasswordRequest.cs" />
+    <Compile Include="Request\Users\UserForgotPasswordRequest.cs" />
+    <Compile Include="Request\Users\UserForgotPasswordConfirmRequest.cs" />
     <Compile Include="Response\Shared\UpdateResponse.cs" />
     <Compile Include="Response\Users\UserCreateResponse.cs" />
     <Compile Include="Models\Balance.cs" />
