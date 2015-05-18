@@ -91,7 +91,7 @@ namespace PlusClouds.Net.Tests
                 Email = user.Email,
                 Password = user.Password
             });
-            
+
             var newPassword = Guid.NewGuid().ToString("N").Substring(0, 12);
 
             var passwordUpdateRequest = client.Users.ChangePassword(new UserChangePasswordRequest
@@ -104,6 +104,12 @@ namespace PlusClouds.Net.Tests
 
             Assert.True(passwordUpdateRequest.Result);
             Assert.Equal(1, passwordUpdateRequest.RowsAffected);
+
+            var forgotPasswordRequest = client.Users.ForgotPassword(new UserForgotPasswordRequest {Email = user.Email});
+            Assert.True(forgotPasswordRequest.Result);
+            Assert.Equal(1, forgotPasswordRequest.RowsAffected);
+
+            // todo: confirm code for forgot password tests
         }
     }
 }

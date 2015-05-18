@@ -1,3 +1,4 @@
+using PlusClouds.Net.Request;
 using PlusClouds.Net.Request.Users;
 using PlusClouds.Net.Response.Shared;
 using PlusClouds.Net.Response.Users;
@@ -14,6 +15,7 @@ namespace PlusClouds.Net.Resources
         private const string activate = "users/activate";
         private const string update = "users/update";
         private const string changePassword = "users/change-password";
+        private const string forgotPassword = "users/forgot-password";
 
         public Users(PlusClouds plusClouds) : base(plusClouds)
         {
@@ -52,6 +54,16 @@ namespace PlusClouds.Net.Resources
         public UpdateResponse ChangePassword(UserChangePasswordRequest userChangePasswordRequest)
         {
             return PlusClouds.Execute<UpdateResponse>(changePassword, Method.POST, userChangePasswordRequest);
+        }
+
+        public UpdateResponse ForgotPassword(UserForgotPasswordRequest userForgotPasswordRequest)
+        {
+            return PlusClouds.Execute<UpdateResponse>(forgotPassword, Method.POST, userForgotPasswordRequest);
+        }
+
+        public UpdateResponse ForgotPassword(UserForgotPasswordConfirmRequest userForgotPasswordConfirmRequest)
+        {
+            return PlusClouds.Execute<UpdateResponse>(forgotPassword, Method.POST, userForgotPasswordConfirmRequest);
         }
     }
 }
