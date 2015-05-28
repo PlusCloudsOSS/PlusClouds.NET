@@ -1,0 +1,29 @@
+version: 1.0.{build}
+branches:
+  # whitelist
+  only:
+    - master
+    - production
+skip_tags: true
+
+# clone directory
+clone_folder: c:\sandbox\PlusClouds.Net
+
+nuget:
+  project_feed: true
+  disable_publish_on_pr: true
+
+build:
+  publish_nuget: false
+  publish_nuget_symbols: false
+  include_nuget_references: true
+  verbosity: minimal
+
+notifications:
+- provider: Email
+  to:
+  - i@vctor.net
+  subject: PlusClouds.Net Library Status
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
