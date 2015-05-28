@@ -11,7 +11,7 @@ namespace PlusClouds.Net
     internal static class Extensions
     {
         public static TResponse Execute<TResponse>(this PlusClouds client, string resource, Method method,
-            params KeyValuePair<string, object>[] parameters)
+            params KeyValuePair<string, object>[] parameters) where TResponse : new()
         {
             var request = new RestRequest(resource, method) {RequestFormat = DataFormat.Json};
 
@@ -25,12 +25,12 @@ namespace PlusClouds.Net
                 });
             }
 
-            var restResponse = client.ApiClient.Execute<PlusResponseParent<TResponse>>(request);
-            return restResponse.Data.Response;
+            var result = client.ApiClient.Execute<PlusResponseParent<TResponse>>(request);
+            return result.Data.Response;
         }
 
         public static TResponse Execute<TResponse>(this PlusClouds client, string resource, Method method,
-            IRequest request)
+            IRequest request) where TResponse : new()
         {
             var tokenizedRequest = request as AccessTokenizedRequest;
             if (tokenizedRequest != null)
@@ -64,7 +64,7 @@ namespace PlusClouds.Net
                 if (string.IsNullOrEmpty(name))
                     name = char.ToLowerInvariant(propertyInfo.Name[0]) + propertyInfo.Name.Substring(1);
 
-                object value = null;
+                object value;
 
                 if (propertyInfo.PropertyType == typeof (DateTime))
                 {
@@ -75,10 +75,26 @@ namespace PlusClouds.Net
                     value = propertyInfo.GetValue(request);
                 }
 
-                parameterList.Add(new KeyValuePair<string, object>(name, value));
+                if (!value.IsNullOrDefault())
+                {
+                    parameterList.Add(new KeyValuePair<string, object>(name, value));
+                }
             }
 
             return parameterList.ToArray();
+        }
+
+        public static object GetDefaultValue(this Type t)
+        {
+            if (!t.IsValueType || Nullable.GetUnderlyingType(t) != null)
+                return null;
+
+            return Activator.CreateInstance(t);
+        }
+
+        public static bool IsNullOrDefault(this object value)
+        {
+            return value == null || value.Equals(value.GetType().GetDefaultValue());
         }
     }
 }

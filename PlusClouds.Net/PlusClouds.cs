@@ -23,6 +23,7 @@ namespace PlusClouds.Net
         internal AuthenticateResponse AuthenticateResponse { get; set; }
         public Auth Auth { get; set; }
         public Users Users { get; set; }
+        public Products Products { get; set; }
 
         protected void CreateRestClient()
         {
@@ -34,6 +35,7 @@ namespace PlusClouds.Net
 
             Auth = new Auth(this);
             Users = new Users(this);
+            Products = new Products(this);
         }
     }
 }
