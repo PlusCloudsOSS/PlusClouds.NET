@@ -1,4 +1,3 @@
-using PlusClouds.Net.Request;
 using PlusClouds.Net.Request.Users;
 using PlusClouds.Net.Response.Shared;
 using PlusClouds.Net.Response.Users;

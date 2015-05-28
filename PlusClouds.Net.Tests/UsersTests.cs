@@ -8,7 +8,7 @@ namespace PlusClouds.Net.Tests
     public class UsersTests
     {
         [Fact]
-        public void Authneticate()
+        public void Authenticate()
         {
             var client = Utility.GetAuthenticatedClient();
             var userData = client.Users.Authenticate(new UserAuthenticateRequest
@@ -22,7 +22,7 @@ namespace PlusClouds.Net.Tests
         }
 
         [Fact]
-        public void AuthneticatedUserSession()
+        public void AuthenticatedUserSession()
         {
             var client = Utility.GetAuthenticatedClient();
             var userData = client.Users.Authenticate(new UserAuthenticateRequest
@@ -49,7 +49,6 @@ namespace PlusClouds.Net.Tests
             });
 
             Assert.Equal(updateRequest.Address, userData.User.Address);
-
             Assert.True(client.Auth.Destroy());
         }
 
