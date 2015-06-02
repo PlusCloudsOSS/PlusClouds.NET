@@ -68,6 +68,7 @@
     <Compile Include="Request\Products\ProductsListRequest.cs" />
     <Compile Include="Request\Products\ProductsListByTagRequest.cs" />
     <Compile Include="Request\Products\SimilarProductsRequest.cs" />
+    <Compile Include="Request\Products\PurchasedProductsRequest.cs" />
     <Compile Include="Response\Products\ProductsListResponse.cs" />
     <Compile Include="Response\Shared\UpdateResponse.cs" />
     <Compile Include="Response\Users\UserCreateResponse.cs" />
