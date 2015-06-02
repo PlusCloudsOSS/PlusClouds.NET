@@ -53,6 +53,7 @@
     <Compile Include="Request\AccessTokenizedRequest.cs" />
     <Compile Include="Request\Users\UserGetSessionRequest.cs" />
     <Compile Include="Request\Users\UserUpdateRequest.Operators.cs" />
+    <Compile Include="Request\IPaginationRequest.cs" />
     <Compile Include="Resources\Products.cs" />
     <Compile Include="Resources\BaseResource.cs" />
     <Compile Include="Request\Users\UserAuthenticateRequest.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Request\Users\UserForgotPasswordRequest.cs" />
     <Compile Include="Request\Users\UserForgotPasswordConfirmRequest.cs" />
     <Compile Include="Request\Products\ProductsListRequest.cs" />
+    <Compile Include="Request\Products\ProductsListByTagRequest.cs" />
     <Compile Include="Response\Products\ProductsListResponse.cs" />
     <Compile Include="Response\Shared\UpdateResponse.cs" />
     <Compile Include="Response\Users\UserCreateResponse.cs" />
