@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using PlusClouds.Net.Request.Products;
+using PlusClouds.Net.Request.Users;
 using Xunit;
 
 namespace PlusClouds.Net.Tests
@@ -47,6 +48,29 @@ namespace PlusClouds.Net.Tests
             {
                 Id = 15
             });
+
+            Assert.True(response.Result, response.ErrorMessage);
+            Assert.NotNull(response.Products);
+            Assert.NotNull(response.Products.First().Value.Id);
+        }
+
+        [Fact]
+        public void PurchasedProductsList()
+        {
+            var client = Utility.GetAuthenticatedClient();
+
+            var userSession = client.Users.Authenticate(new UserAuthenticateRequest
+            {
+                Email = Utility.UserEmail,
+                Password = Utility.UserPassword
+            });
+
+            var response = client.Products.ListPurchasedProducts(new PurchasedProductsRequest
+            {
+                SessionId = userSession.Session.Id
+            });
+
+            if (response.ErrorMessage != "Satın alınmış ürün bulunamadı.") return;
 
             Assert.True(response.Result, response.ErrorMessage);
             Assert.NotNull(response.Products);
