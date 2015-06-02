@@ -55,7 +55,7 @@ namespace PlusClouds.Net.Tests
         }
 
         [Fact]
-        public void PurchasedProductsList()
+        public void PurchaseTrialProductTest()
         {
             var client = Utility.GetAuthenticatedClient();
 
@@ -63,6 +63,19 @@ namespace PlusClouds.Net.Tests
             {
                 Email = Utility.UserEmail,
                 Password = Utility.UserPassword
+            });
+
+            var trialProduct = client.Products.List(new ProductsListRequest
+            {
+                Limit = 300
+            }).Products.LastOrDefault(s => s.Value.TrialTime != null).Value;
+
+            if (trialProduct == null) return;
+
+            client.Products.Free(new PurchaseProductRequest
+            {
+                SessionId = userSession.Session.Id,
+                ProductId = trialProduct.Id
             });
 
             var response = client.Products.ListPurchasedProducts(new PurchasedProductsRequest
@@ -75,6 +88,35 @@ namespace PlusClouds.Net.Tests
             Assert.True(response.Result, response.ErrorMessage);
             Assert.NotNull(response.Products);
             Assert.NotNull(response.Products.First().Value.Id);
+        }
+
+        [Fact]
+        public void PurchasedProductsDeleteTest()
+        {
+            var client = Utility.GetAuthenticatedClient();
+
+            var userSession = client.Users.Authenticate(new UserAuthenticateRequest
+            {
+                Email = Utility.UserEmail,
+                Password = Utility.UserPassword
+            });
+
+            var purchased = client.Products.ListPurchasedProducts(new PurchasedProductsRequest
+            {
+                SessionId = userSession.Session.Id
+            }).Products.FirstOrDefault().Value;
+
+            if (purchased == null) return;
+
+            var response = client.Products.Delete(new ProductDeleteRequest
+            {
+                SessionId = userSession.Session.Id,
+                ServiceId = purchased.Id
+            });
+
+            Assert.True(response.Result, response.ErrorMessage);
+            Assert.NotNull(response.Job);
+            Assert.Equal("PENDING",response.Job.Status);
         }
     }
 }
