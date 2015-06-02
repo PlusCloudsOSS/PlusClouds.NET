@@ -1,6 +1,5 @@
 using PlusClouds.Net.Request.Products;
 using PlusClouds.Net.Response.Products;
-using PlusClouds.Net.Response.Users;
 using RestSharp;
 
 namespace PlusClouds.Net.Resources
@@ -8,17 +7,21 @@ namespace PlusClouds.Net.Resources
     public class Products : BaseResource
     {
         private const string products = "products";
+        private const string productsByTag = "products/get-products-by-tag";
 
         public Products(PlusClouds plusClouds)
             : base(plusClouds)
         {
         }
 
-        internal UserAuthenticateResponse UserAuthenticateResponse { get; set; }
-
         public ProductsListResponse List(ProductsListRequest productsListRequest)
         {
             return PlusClouds.Execute<ProductsListResponse>(products, Method.GET, productsListRequest);
+        }
+
+        public ProductsListResponse ListProductsByTag(ProductsListByTagRequest productsListRequest)
+        {
+            return PlusClouds.Execute<ProductsListResponse>(productsByTag, Method.GET, productsListRequest);
         }
     }
 }
