@@ -19,7 +19,7 @@ namespace PlusClouds.Net.Request.Users
                 Address2 = user.Address2,
                 Country = user.Country.Id,
                 City = user.City,
-                ZipCode = user.Zip_code,
+                ZipCode = user.ZipCode,
                 Phone = user.Phone,
                 CellPhone = user.Cellphone,
                 Twitter = user.Twitter,

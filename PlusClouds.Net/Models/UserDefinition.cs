@@ -3,19 +3,19 @@ namespace PlusClouds.Net.Models
     public class UserDefinition
     {
         public string Id { get; set; }
-        public bool Sys_user { get; set; }
-        public string Account_type { get; set; }
-        public bool Is_entrepreneur { get; set; }
+        public bool SysUser { get; set; }
+        public string AccountType { get; set; }
+        public bool IsEntrepreneur { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Full_name { get; set; }
+        public string FullName { get; set; }
         public string Email { get; set; }
-        public bool Is_suspended { get; set; }
+        public bool IsSuspended { get; set; }
         public string Birthdate { get; set; }
         public string Address { get; set; }
         public string Address2 { get; set; }
         public string City { get; set; }
-        public string Zip_code { get; set; }
+        public string ZipCode { get; set; }
         public string Phone { get; set; }
         public string Cellphone { get; set; }
         public string Gender { get; set; }
@@ -24,13 +24,13 @@ namespace PlusClouds.Net.Models
         public string Facebook { get; set; }
         public string Linkedin { get; set; }
         public string Invitation_count { get; set; }
-        public string Create_time { get; set; }
+        public string CreateTime { get; set; }
         public object Website { get; set; }
-        public object Affiliation_code { get; set; }
+        public object AffiliationCode { get; set; }
         public Country Country { get; set; }
         public Company Company { get; set; }
-        public bool Is_missing_contact_info { get; set; }
+        public bool IsMissingContactInfo { get; set; }
         public object Avatar { get; set; }
-        public string Default_locale { get; set; }
+        public string DefaultLocale { get; set; }
     }
 }

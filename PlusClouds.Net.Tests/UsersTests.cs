@@ -22,7 +22,7 @@ namespace PlusClouds.Net.Tests
         }
 
         [Fact]
-        public void AuthenticatedUserSession()
+        public void AuthenticatedUserSessionAndUpdate()
         {
             var client = Utility.GetAuthenticatedClient();
             var userData = client.Users.Authenticate(new UserAuthenticateRequest
