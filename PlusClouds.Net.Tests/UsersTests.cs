@@ -17,7 +17,7 @@ namespace PlusClouds.Net.Tests
                 Password = Utility.UserPassword
             });
 
-            Assert.True(userData.Result);
+            Assert.True(userData.Result, userData.ErrorMessage);
             client.Auth.Destroy();
         }
 
@@ -32,14 +32,14 @@ namespace PlusClouds.Net.Tests
             });
 
             var session = client.Users.GetSession(new UserGetSessionRequest {SessionId = userData.Session.Id});
-            Assert.True(session.Result);
+            Assert.True(session.Result, session.ErrorMessage);
 
             var updateRequest = ((UserUpdateRequest) userData.User);
             updateRequest.Address = Guid.NewGuid().ToString("N");
             updateRequest.SessionId = session.Session.Id;
 
             var updateResponse = client.Users.Update(updateRequest);
-            Assert.True(updateResponse.Result);
+            Assert.True(updateResponse.Result, updateResponse.ErrorMessage);
             Assert.Equal(1, updateResponse.RowsAffected);
 
             userData = client.Users.Authenticate(new UserAuthenticateRequest
@@ -74,7 +74,7 @@ namespace PlusClouds.Net.Tests
             var createResponse = client.Users.Create(user);
 
             Utility.Dump(SimpleJson.SerializeObject(user), SimpleJson.SerializeObject(createResponse));
-            Assert.True(createResponse.Result);
+            Assert.True(createResponse.Result, createResponse.ErrorMessage);
 
             var activation = client.Users.Activate(new UserActivationRequest
             {
@@ -82,7 +82,7 @@ namespace PlusClouds.Net.Tests
                 Code = createResponse.ActivationCode
             });
 
-            Assert.True(activation.Result);
+            Assert.True(activation.Result, activation.ErrorMessage);
             Assert.Equal(1, activation.RowsAffected);
 
             var userSession = client.Users.Authenticate(new UserAuthenticateRequest
@@ -101,11 +101,11 @@ namespace PlusClouds.Net.Tests
                 ConfirmPassword = newPassword
             });
 
-            Assert.True(passwordUpdateRequest.Result);
+            Assert.True(passwordUpdateRequest.Result, passwordUpdateRequest.ErrorMessage);
             Assert.Equal(1, passwordUpdateRequest.RowsAffected);
 
             var forgotPasswordRequest = client.Users.ForgotPassword(new UserForgotPasswordRequest {Email = user.Email});
-            Assert.True(forgotPasswordRequest.Result);
+            Assert.True(forgotPasswordRequest.Result, forgotPasswordRequest.ErrorMessage);
             Assert.Equal(1, forgotPasswordRequest.RowsAffected);
 
             // todo: confirm code for forgot password tests

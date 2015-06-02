@@ -23,10 +23,10 @@ namespace PlusClouds.Net.Tests
         {
             var client = new PlusClouds(Utility.ClientId, Utility.ClientSecret);
             var authenticated = client.Auth.Authenticate();
-            Assert.True(authenticated.Result);
+            Assert.True(authenticated.Result, authenticated.ErrorMessage);
 
             var accessToken = client.Auth.AccessToken();
-            Assert.True(accessToken.Result);
+            Assert.True(accessToken.Result, accessToken.ErrorMessage);
             Assert.Equal(authenticated.AccessToken, accessToken.AccessToken);
             Assert.Equal(authenticated.SessionId, accessToken.SessionId);
 

@@ -8,6 +8,7 @@ namespace PlusClouds.Net.Resources
     {
         private const string products = "products";
         private const string productsByTag = "products/get-products-by-tag";
+        private const string similarProducts = "products/get-similar-products";
 
         public Products(PlusClouds plusClouds)
             : base(plusClouds)
@@ -22,6 +23,11 @@ namespace PlusClouds.Net.Resources
         public ProductsListResponse ListProductsByTag(ProductsListByTagRequest productsListRequest)
         {
             return PlusClouds.Execute<ProductsListResponse>(productsByTag, Method.GET, productsListRequest);
+        }
+
+        public ProductsListResponse ListSimilarProducts(SimilarProductsRequest productsListRequest)
+        {
+            return PlusClouds.Execute<ProductsListResponse>(similarProducts, Method.GET, productsListRequest);
         }
     }
 }
