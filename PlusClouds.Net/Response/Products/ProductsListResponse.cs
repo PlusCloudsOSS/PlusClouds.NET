@@ -33,7 +33,7 @@ namespace PlusClouds.Net.Response.Products
 
     public class Company
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string TaxOffice { get; set; }
         public string TaxNumber { get; set; }
@@ -70,7 +70,7 @@ namespace PlusClouds.Net.Response.Products
 
     public class Datacenter
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public PartPrice CpuPrice { get; set; }
@@ -81,7 +81,7 @@ namespace PlusClouds.Net.Response.Products
 
     public class Product
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Slug { get; set; }
         public Price Price { get; set; }
