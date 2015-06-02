@@ -1,11 +1,16 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using PlusClouds.Net.Request.Products;
 using PlusClouds.Net.Request.Users;
+using PlusClouds.Net.Resources;
+using PlusClouds.Net.Response.Products;
 using Xunit;
 
 namespace PlusClouds.Net.Tests
 {
-    public class ProductsTests
+    public class ProductsAndVmTests
     {
         [Fact]
         public void ProductListTest()
@@ -87,11 +92,12 @@ namespace PlusClouds.Net.Tests
 
             Assert.True(response.Result, response.ErrorMessage);
             Assert.NotNull(response.Products);
-            Assert.NotNull(response.Products.First().Value.Id);
+            Assert.NotNull(response.Products.Any(s => s.Value.Id == trialProduct.Id));
         }
 
+        
         [Fact]
-        public void PurchasedProductsDeleteTest()
+        public void PurchasedVmListTest()
         {
             var client = Utility.GetAuthenticatedClient();
 
@@ -101,22 +107,14 @@ namespace PlusClouds.Net.Tests
                 Password = Utility.UserPassword
             });
 
-            var purchased = client.Products.ListPurchasedProducts(new PurchasedProductsRequest
+            var response = client.Vm.List(new VmListRequest
             {
                 SessionId = userSession.Session.Id
-            }).Products.FirstOrDefault().Value;
-
-            if (purchased == null) return;
-
-            var response = client.Products.Delete(new ProductDeleteRequest
-            {
-                SessionId = userSession.Session.Id,
-                ServiceId = purchased.Id
             });
 
+
             Assert.True(response.Result, response.ErrorMessage);
-            Assert.NotNull(response.Job);
-            Assert.Equal("PENDING",response.Job.Status);
+            Assert.NotNull(response.Servers);
         }
     }
 }

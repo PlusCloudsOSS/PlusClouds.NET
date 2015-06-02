@@ -24,6 +24,7 @@ namespace PlusClouds.Net
         public Auth Auth { get; set; }
         public Users Users { get; set; }
         public Products Products { get; set; }
+        public Vm Vm { get; set; }
 
         protected void CreateRestClient()
         {
@@ -36,6 +37,7 @@ namespace PlusClouds.Net
             Auth = new Auth(this);
             Users = new Users(this);
             Products = new Products(this);
+            Vm = new Vm(this);
         }
     }
 }

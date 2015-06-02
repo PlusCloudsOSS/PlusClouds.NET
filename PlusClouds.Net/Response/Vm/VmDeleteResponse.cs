@@ -1,8 +1,9 @@
-namespace PlusClouds.Net.Response.Products
+namespace PlusClouds.Net.Response.Vm
 {
-    public class ProductDeleteResponse : BaseResponse
+    public class VmDeleteResponse : BaseResponse
     {
         public Job Job { get; set; }
+        public VirtualMachineDeleteResponse Vm { get; set; }
     }
 
     public class Job
@@ -11,7 +12,7 @@ namespace PlusClouds.Net.Response.Products
         public string Status { get; set; }
     }
 
-    public class Vm
+    public class VirtualMachineDeleteResponse
     {
         public int Id { get; set; }
         public int ServiceId { get; set; }
