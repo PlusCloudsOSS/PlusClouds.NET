@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Request.Products
+namespace PlusClouds.Net.Request.Products.Enums
 {
     public enum ResourceType
     {
