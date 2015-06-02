@@ -55,8 +55,11 @@
     <Compile Include="Request\Users\UserGetSessionRequest.cs" />
     <Compile Include="Request\Users\UserUpdateRequest.Operators.cs" />
     <Compile Include="Request\IPaginationRequest.cs" />
-    <Compile Include="Request\Products\ProductDeleteRequest.cs" />
-    <Compile Include="Response\Products\ProductDeleteResponse.cs" />
+    <Compile Include="Request\Vm\VmDeleteRequest.cs" />
+    <Compile Include="Resources\Vm.cs" />
+    <Compile Include="Request\Vm\VmListRequest.cs" />
+    <Compile Include="Response\Vm\VmListResponse.cs" />
+    <Compile Include="Response\Vm\VmDeleteResponse.cs" />
     <Compile Include="Resources\Products.cs" />
     <Compile Include="Resources\BaseResource.cs" />
     <Compile Include="Request\Users\UserAuthenticateRequest.cs" />

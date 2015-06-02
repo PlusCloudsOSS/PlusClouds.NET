@@ -12,7 +12,6 @@ namespace PlusClouds.Net.Resources
         private const string purchasedProducts = "products/get-purchased-products";
         private const string productsBuy = "products/buy";
         private const string productsFree = "products/free";
-        private const string vmDelete = "vm/delete";
 
         public Products(PlusClouds plusClouds)
             : base(plusClouds)
@@ -47,11 +46,6 @@ namespace PlusClouds.Net.Resources
         public PurchaseProductResponse Free(PurchaseProductRequest purchaseProductRequest)
         {
             return PlusClouds.Execute<PurchaseProductResponse>(productsFree, Method.GET, purchaseProductRequest);
-        }
-
-        public ProductDeleteResponse Delete(ProductDeleteRequest productDeleteRequest)
-        {
-            return PlusClouds.Execute<ProductDeleteResponse>(vmDelete, Method.GET, productDeleteRequest);
         }
     }
 }

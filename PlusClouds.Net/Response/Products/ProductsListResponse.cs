@@ -63,20 +63,15 @@ namespace PlusClouds.Net.Response.Products
         public string InMaintenance { get; set; }
     }
 
-    public class PartPrice
-    {
-        public PriceCurrency Default { get; set; }
-    }
-
     public class Datacenter
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public PartPrice CpuPrice { get; set; }
-        public PartPrice RamPrice { get; set; }
-        public PartPrice HddPrice { get; set; }
-        public PartPrice BwPrice { get; set; }
+        public Dictionary<string, PriceCurrency> CpuPrice { get; set; }
+        public Dictionary<string, PriceCurrency> RamPrice { get; set; }
+        public Dictionary<string, PriceCurrency> HddPrice { get; set; }
+        public Dictionary<string, PriceCurrency> BwPrice { get; set; }
     }
 
     public class Product

@@ -1,8 +1,8 @@
 using PlusClouds.Net.Attributes;
 
-namespace PlusClouds.Net.Request.Products
+namespace PlusClouds.Net.Request.Vm
 {
-    public class ProductDeleteRequest : AccessTokenizedRequest
+    public class VmDeleteRequest : AccessTokenizedRequest
     {
         [Name("sid")]
         public string SessionId { get; set; }
