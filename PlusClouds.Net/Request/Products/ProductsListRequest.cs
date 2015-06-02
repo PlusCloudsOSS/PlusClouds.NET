@@ -2,10 +2,8 @@ using PlusClouds.Net.Request.Products.Enums;
 
 namespace PlusClouds.Net.Request.Products
 {
-    public class ProductsListRequest : ProductsListByTagRequest
+    public class ProductsListRequest : BaseProductRequest, IPaginationRequest
     {
-        private new string Category { get; set; }
-        private new string CountryId { get; set; }
         public int Id { get; set; }
         public string Ids { get; set; }
         public string Name { get; set; }
@@ -16,5 +14,7 @@ namespace PlusClouds.Net.Request.Products
         public int Memory { get; set; }
         public int VendorId { get; set; }
         public Distribution Distribution { get; set; }
+        public virtual int DatacenterId { get; set; }
+        public int Page { get; set; }
     }
 }

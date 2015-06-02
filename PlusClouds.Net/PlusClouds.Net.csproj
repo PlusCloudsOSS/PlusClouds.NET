@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\NameAttribute.cs" />
+    <Compile Include="Request\Products\BaseProductRequest.cs" />
     <Compile Include="Request\Products\Enums\Distribution.cs" />
     <Compile Include="Request\Products\Enums\PaymentType.cs" />
     <Compile Include="Request\Products\Enums\ProductType.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Request\Users\UserForgotPasswordConfirmRequest.cs" />
     <Compile Include="Request\Products\ProductsListRequest.cs" />
     <Compile Include="Request\Products\ProductsListByTagRequest.cs" />
+    <Compile Include="Request\Products\SimilarProductsRequest.cs" />
     <Compile Include="Response\Products\ProductsListResponse.cs" />
     <Compile Include="Response\Shared\UpdateResponse.cs" />
     <Compile Include="Response\Users\UserCreateResponse.cs" />
