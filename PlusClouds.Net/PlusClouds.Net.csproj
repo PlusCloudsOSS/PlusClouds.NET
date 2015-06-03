@@ -64,7 +64,7 @@
     <Compile Include="Request\Vm\VmChangePasswordRequest.cs" />
     <Compile Include="Request\Vm\VmChangeServerNameRequest.cs" />
     <Compile Include="Request\Vm\VmAddIpRequest.cs" />
-    <Compile Include="Resources\VmConsoleInformationResponse.cs" />
+    <Compile Include="Response\Vm\VmConsoleInformationResponse.cs" />
     <Compile Include="Response\Vm\VmListResponse.cs" />
     <Compile Include="Response\Vm\VmJobResponse.cs" />
     <Compile Include="Resources\Products.cs" />

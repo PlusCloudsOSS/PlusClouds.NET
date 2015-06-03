@@ -1,7 +1,6 @@
 using PlusClouds.Net.Attributes;
-using PlusClouds.Net.Request;
 
-namespace PlusClouds.Net.Resources
+namespace PlusClouds.Net.Request.Vm
 {
     public class VmJobRequest : AccessTokenizedRequest
     {
