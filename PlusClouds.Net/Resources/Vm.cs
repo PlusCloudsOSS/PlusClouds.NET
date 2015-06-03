@@ -10,6 +10,7 @@ namespace PlusClouds.Net.Resources
         private const string list = "vm";
         private const string vmDelete = "vm/delete";
         private const string vmStart = "vm/start";
+        private const string vmStop = "vm/stop";
 
         public Vm(PlusClouds plusClouds)
             : base(plusClouds)
@@ -26,9 +27,14 @@ namespace PlusClouds.Net.Resources
             return PlusClouds.Execute<VmJobResponse>(vmDelete, Method.GET, vmDeleteRequest);
         }
 
-        public VmJobResponse Delete(VmStartRequest vmStartRequest)
+        public VmJobResponse Start(VmStartRequest vmStartRequest)
         {
             return PlusClouds.Execute<VmJobResponse>(vmStart, Method.GET, vmStartRequest);
+        }
+
+        public VmJobResponse Stop(VmStopRequest vmStartRequest)
+        {
+            return PlusClouds.Execute<VmJobResponse>(vmStop, Method.GET, vmStartRequest);
         }
     }
 }
