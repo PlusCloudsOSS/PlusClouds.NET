@@ -1,11 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using PlusClouds.Net.Request.Products;
 using PlusClouds.Net.Request.Users;
-using PlusClouds.Net.Resources;
-using PlusClouds.Net.Response.Products;
+using PlusClouds.Net.Request.Vm;
 using Xunit;
 
 namespace PlusClouds.Net.Tests
@@ -95,7 +91,6 @@ namespace PlusClouds.Net.Tests
             Assert.NotNull(response.Products.Any(s => s.Value.Id == trialProduct.Id));
         }
 
-        
         [Fact]
         public void PurchasedVmListTest()
         {

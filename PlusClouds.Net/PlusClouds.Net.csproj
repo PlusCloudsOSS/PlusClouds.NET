@@ -58,8 +58,13 @@
     <Compile Include="Request\Vm\VmDeleteRequest.cs" />
     <Compile Include="Resources\Vm.cs" />
     <Compile Include="Request\Vm\VmListRequest.cs" />
-    <Compile Include="Request\Vm\VmStartRequest.cs" />
+    <Compile Include="Request\Vm\VmJobRequest.cs" />
     <Compile Include="Request\Vm\VmStopRequest.cs" />
+    <Compile Include="Request\Vm\VmRebootRequest.cs" />
+    <Compile Include="Request\Vm\VmChangePasswordRequest.cs" />
+    <Compile Include="Request\Vm\VmChangeServerNameRequest.cs" />
+    <Compile Include="Request\Vm\VmAddIpRequest.cs" />
+    <Compile Include="Resources\VmConsoleInformationResponse.cs" />
     <Compile Include="Response\Vm\VmListResponse.cs" />
     <Compile Include="Response\Vm\VmJobResponse.cs" />
     <Compile Include="Resources\Products.cs" />

@@ -1,5 +1,4 @@
 using PlusClouds.Net.Request.Vm;
-using PlusClouds.Net.Response;
 using PlusClouds.Net.Response.Vm;
 using RestSharp;
 
@@ -11,6 +10,11 @@ namespace PlusClouds.Net.Resources
         private const string vmDelete = "vm/delete";
         private const string vmStart = "vm/start";
         private const string vmStop = "vm/stop";
+        private const string vmReboot = "vm/reboot";
+        private const string vmChangePassword = "vm/change-password";
+        private const string vmChangeServerName = "vm/change-server-name";
+        private const string vmAddIp = "vm/add-ip";
+        private const string vmGetConsole = "vm/get-console";
 
         public Vm(PlusClouds plusClouds)
             : base(plusClouds)
@@ -27,14 +31,39 @@ namespace PlusClouds.Net.Resources
             return PlusClouds.Execute<VmJobResponse>(vmDelete, Method.GET, vmDeleteRequest);
         }
 
-        public VmJobResponse Start(VmStartRequest vmStartRequest)
+        public VmJobResponse Start(VmJobRequest vmJobRequest)
         {
-            return PlusClouds.Execute<VmJobResponse>(vmStart, Method.GET, vmStartRequest);
+            return PlusClouds.Execute<VmJobResponse>(vmStart, Method.GET, vmJobRequest);
         }
 
         public VmJobResponse Stop(VmStopRequest vmStartRequest)
         {
             return PlusClouds.Execute<VmJobResponse>(vmStop, Method.GET, vmStartRequest);
+        }
+
+        public VmJobResponse Reboot(VmRebootRequest vmRebootRequest)
+        {
+            return PlusClouds.Execute<VmJobResponse>(vmReboot, Method.GET, vmRebootRequest);
+        }
+
+        public VmJobResponse ChangePassword(VmChangePasswordRequest vmChangePasswordRequest)
+        {
+            return PlusClouds.Execute<VmJobResponse>(vmChangePassword, Method.GET, vmChangePasswordRequest);
+        }
+
+        public VmJobResponse ChangeServerName(VmChangeServerNameRequest vmChangeServerNameRequest)
+        {
+            return PlusClouds.Execute<VmJobResponse>(vmChangeServerName, Method.GET, vmChangeServerNameRequest);
+        }
+
+        public VmJobResponse AddIp(VmAddIpRequest vmAddIpRequest)
+        {
+            return PlusClouds.Execute<VmJobResponse>(vmAddIp, Method.GET, vmAddIpRequest);
+        }
+
+        public VmConsoleInformationResponse GetConsole(VmJobRequest vmJobRequest)
+        {
+            return PlusClouds.Execute<VmConsoleInformationResponse>(vmGetConsole, Method.GET, vmJobRequest);
         }
     }
 }

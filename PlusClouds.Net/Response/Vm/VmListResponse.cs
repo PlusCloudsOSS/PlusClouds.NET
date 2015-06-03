@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using PlusClouds.Net.Response;
 using PlusClouds.Net.Response.Products;
 
-namespace PlusClouds.Net.Resources
+namespace PlusClouds.Net.Response.Vm
 {
     public class VmListResponse : BaseResponse
     {

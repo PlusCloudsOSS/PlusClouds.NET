@@ -3,7 +3,7 @@ using PlusClouds.Net.Request;
 
 namespace PlusClouds.Net.Resources
 {
-    public class VmStartRequest : AccessTokenizedRequest
+    public class VmJobRequest : AccessTokenizedRequest
     {
         [Name("sid")]
         public string SessionId { get; set; }
