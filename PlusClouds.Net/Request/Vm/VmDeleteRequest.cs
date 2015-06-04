@@ -1,3 +1,4 @@
+using System;
 using PlusCloudsNet.Attributes;
 
 namespace PlusCloudsNet.Request.Vm
@@ -7,7 +8,7 @@ namespace PlusCloudsNet.Request.Vm
         [Name("sid")]
         public string SessionId { get; set; }
 
-        public int ServiceId { get; set; }
+        public Int64 ServiceId { get; set; }
         public bool ForceStop { get; set; }
     }
 }

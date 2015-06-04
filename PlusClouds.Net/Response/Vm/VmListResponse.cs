@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using PlusCloudsNet.Response.Products;
 
@@ -17,19 +18,19 @@ namespace PlusCloudsNet.Response.Vm
         public string Name { get; set; }
         public string Hostname { get; set; }
         public string Status { get; set; }
-        public object Last_Status { get; set; }
+        public string Last_Status { get; set; }
         public string Cpu { get; set; }
         public string Ram { get; set; }
         public string Hdd { get; set; }
         public string Username { get; set; }
-        public object Note { get; set; }
+        public string Note { get; set; }
         public string Create_Time { get; set; }
         public string Domain { get; set; }
-        public object Features { get; set; }
+        public dynamic Features { get; set; }
         public bool Pv { get; set; }
         public Dictionary<string, ServerProduct> Products { get; set; }
-        public object Virtual_Machine_Groups_Id { get; set; }
-        public object Monitoring_Id { get; set; }
+        public Int64 Virtual_Machine_Groups_Id { get; set; }
+        public Int64 Monitoring_Id { get; set; }
         public string Dns_Record_Id { get; set; }
         public Template Template { get; set; }
         public Datacenter Datacenter { get; set; }

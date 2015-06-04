@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace PlusCloudsNet.Response.Products
@@ -33,7 +34,7 @@ namespace PlusCloudsNet.Response.Products
 
     public class Company
     {
-        public int Id { get; set; }
+        public Int64 Id { get; set; }
         public string Name { get; set; }
         public string TaxOffice { get; set; }
         public string TaxNumber { get; set; }
@@ -41,7 +42,7 @@ namespace PlusCloudsNet.Response.Products
 
     public class Vendor
     {
-        public int Id { get; set; }
+        public Int64 Id { get; set; }
         public bool SysUser { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -53,7 +54,7 @@ namespace PlusCloudsNet.Response.Products
 
     public class Template
     {
-        public int Id { get; set; }
+        public Int64 Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public string Distribution { get; set; }
@@ -65,7 +66,7 @@ namespace PlusCloudsNet.Response.Products
 
     public class Datacenter
     {
-        public int Id { get; set; }
+        public Int64 Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public Dictionary<string, PriceCurrency> CpuPrice { get; set; }
@@ -76,7 +77,7 @@ namespace PlusCloudsNet.Response.Products
 
     public class Product
     {
-        public int Id { get; set; }
+        public Int64 Id { get; set; }
         public string Name { get; set; }
         public string Slug { get; set; }
         public Price Price { get; set; }
@@ -90,16 +91,13 @@ namespace PlusCloudsNet.Response.Products
         public string Bw { get; set; }
         public string TrialTime { get; set; }
         public string IsResource { get; set; }
-        //Object Type
-        public object ResourcesType { get; set; }
+        public string ResourcesType { get; set; }
         public string RatingTotal { get; set; }
         public string RatingCount { get; set; }
         public string PaymentType { get; set; }
         public string ProductType { get; set; }
-        //Object Type
-        public object Options { get; set; }
-        //Object Type
-        public object BrmFields { get; set; }
+        public dynamic Options { get; set; }
+        public dynamic BrmFields { get; set; }
         public Vendor Vendor { get; set; }
         public Template Template { get; set; }
         public string Description { get; set; }

@@ -18,7 +18,7 @@ namespace PlusCloudsNet.Request.Users
         public string Address { get; set; }
         public string Address2 { get; set; }
         public string City { get; set; }
-        public int Country { get; set; }
+        public Int64 Country { get; set; }
         public string ZipCode { get; set; }
         public string Phone { get; set; }
         public string CellPhone { get; set; }

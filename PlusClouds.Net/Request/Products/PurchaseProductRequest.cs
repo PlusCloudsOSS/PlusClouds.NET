@@ -1,3 +1,4 @@
+using System;
 using PlusCloudsNet.Attributes;
 
 namespace PlusCloudsNet.Request.Products
@@ -8,11 +9,11 @@ namespace PlusCloudsNet.Request.Products
         public string SessionId { get; set; }
 
         [Name("products")]
-        public int ProductId { get; set; }
+        public Int64 ProductId { get; set; }
 
-        public int ForService { get; set; }
+        public Int64 ForService { get; set; }
         public string PaymentMethod { get; set; }
-        public int CardId { get; set; }
+        public Int64 CardId { get; set; }
         public string CcName { get; set; }
         public string CcSurnane { get; set; }
         public string CcType { get; set; }

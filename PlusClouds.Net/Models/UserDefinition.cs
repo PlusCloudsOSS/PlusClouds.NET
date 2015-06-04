@@ -25,12 +25,12 @@ namespace PlusCloudsNet.Models
         public string Linkedin { get; set; }
         public string Invitation_count { get; set; }
         public string CreateTime { get; set; }
-        public object Website { get; set; }
-        public object AffiliationCode { get; set; }
+        public string Website { get; set; }
+        public string AffiliationCode { get; set; }
         public Country Country { get; set; }
         public Company Company { get; set; }
         public bool IsMissingContactInfo { get; set; }
-        public object Avatar { get; set; }
+        public string Avatar { get; set; }
         public string DefaultLocale { get; set; }
     }
 }
