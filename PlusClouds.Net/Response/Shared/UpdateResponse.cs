@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Response.Shared
+namespace PlusCloudsNet.Response.Shared
 {
     public class UpdateResponse : BaseResponse
     {

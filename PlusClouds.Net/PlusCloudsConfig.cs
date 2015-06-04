@@ -1,8 +1,8 @@
 using System;
-using PlusClouds.Net.Exceptions;
-using PlusClouds.Net.Request.Auth;
+using PlusCloudsNet.Exceptions;
+using PlusCloudsNet.Request.Auth;
 
-namespace PlusClouds.Net
+namespace PlusCloudsNet
 {
     public class PlusCloudsConfig : IAuthenticateRequest
     {

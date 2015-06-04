@@ -1,7 +1,7 @@
-﻿using PlusClouds.Net.Exceptions;
+﻿using PlusCloudsNet.Exceptions;
 using Xunit;
 
-namespace PlusClouds.Net.Tests
+namespace PlusCloudsNet.Tests
 {
     public class AuthTests
     {

@@ -1,6 +1,6 @@
-using PlusClouds.Net.Models;
+using PlusCloudsNet.Models;
 
-namespace PlusClouds.Net.Response.Users
+namespace PlusCloudsNet.Response.Users
 {
     public class UserAuthenticateResponse : BaseResponse
     {

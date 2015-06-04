@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using PlusClouds.Net.Request.Products;
-using PlusClouds.Net.Request.Users;
-using PlusClouds.Net.Request.Vm;
+using PlusCloudsNet.Request.Products;
+using PlusCloudsNet.Request.Users;
+using PlusCloudsNet.Request.Vm;
 using Xunit;
 
-namespace PlusClouds.Net.Tests
+namespace PlusCloudsNet.Tests
 {
     public class ProductsAndVmTests
     {

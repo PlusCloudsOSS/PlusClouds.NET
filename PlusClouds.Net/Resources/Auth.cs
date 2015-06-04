@@ -1,8 +1,8 @@
-using PlusClouds.Net.Request.Auth;
-using PlusClouds.Net.Response.Auth;
+using PlusCloudsNet.Request.Auth;
+using PlusCloudsNet.Response.Auth;
 using RestSharp;
 
-namespace PlusClouds.Net.Resources
+namespace PlusCloudsNet.Resources
 {
     public class Auth : BaseResource
     {

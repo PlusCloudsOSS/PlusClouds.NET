@@ -1,9 +1,9 @@
-using PlusClouds.Net.Request.Users;
-using PlusClouds.Net.Response.Shared;
-using PlusClouds.Net.Response.Users;
+using PlusCloudsNet.Request.Users;
+using PlusCloudsNet.Response.Shared;
+using PlusCloudsNet.Response.Users;
 using RestSharp;
 
-namespace PlusClouds.Net.Resources
+namespace PlusCloudsNet.Resources
 {
     public class Users : BaseResource
     {

@@ -1,6 +1,6 @@
-using PlusClouds.Net.Attributes;
+using PlusCloudsNet.Attributes;
 
-namespace PlusClouds.Net.Request.Users
+namespace PlusCloudsNet.Request.Users
 {
     public class UserGetSessionRequest : AccessTokenizedRequest
     {

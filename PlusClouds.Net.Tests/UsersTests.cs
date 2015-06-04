@@ -1,9 +1,9 @@
 ﻿using System;
-using PlusClouds.Net.Request.Users;
+using PlusCloudsNet.Request.Users;
 using RestSharp;
 using Xunit;
 
-namespace PlusClouds.Net.Tests
+namespace PlusCloudsNet.Tests
 {
     public class UsersTests
     {

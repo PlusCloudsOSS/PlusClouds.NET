@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Response.Users
+namespace PlusCloudsNet.Response.Users
 {
     public class UserCreateResponse : BaseResponse
     {

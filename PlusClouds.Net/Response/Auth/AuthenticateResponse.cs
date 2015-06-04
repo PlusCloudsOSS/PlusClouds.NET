@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Response.Auth
+namespace PlusCloudsNet.Response.Auth
 {
     public class AuthenticateResponse : BaseResponse
     {

@@ -1,6 +1,6 @@
-using PlusClouds.Net.Attributes;
+using PlusCloudsNet.Attributes;
 
-namespace PlusClouds.Net.Request.Vm
+namespace PlusCloudsNet.Request.Vm
 {
     public class VmListRequest : AccessTokenizedRequest, IPaginationRequest
     {

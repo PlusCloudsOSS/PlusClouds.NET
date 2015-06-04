@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace PlusClouds.Net.Response.Products
+namespace PlusCloudsNet.Response.Products
 {
     public class ProductsListResponse : BaseResponse
     {

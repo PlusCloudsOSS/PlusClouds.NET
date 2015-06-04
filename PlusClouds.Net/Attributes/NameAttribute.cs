@@ -1,6 +1,6 @@
 using System;
 
-namespace PlusClouds.Net.Attributes
+namespace PlusCloudsNet.Attributes
 {
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
     internal class NameAttribute : Attribute

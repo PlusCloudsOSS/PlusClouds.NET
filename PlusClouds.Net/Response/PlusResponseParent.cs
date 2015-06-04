@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Response
+namespace PlusCloudsNet.Response
 {
     public class PlusResponseParent : PlusResponseParent<BaseResponse>
     {

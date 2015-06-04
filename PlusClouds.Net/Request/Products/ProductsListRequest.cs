@@ -1,6 +1,6 @@
-using PlusClouds.Net.Request.Products.Enums;
+using PlusCloudsNet.Request.Products.Enums;
 
-namespace PlusClouds.Net.Request.Products
+namespace PlusCloudsNet.Request.Products
 {
     public class ProductsListRequest : BaseProductRequest, IPaginationRequest
     {

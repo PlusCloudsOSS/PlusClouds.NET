@@ -1,9 +1,9 @@
 ﻿using System.Net;
-using PlusClouds.Net.Resources;
-using PlusClouds.Net.Response.Auth;
+using PlusCloudsNet.Resources;
+using PlusCloudsNet.Response.Auth;
 using RestSharp;
 
-namespace PlusClouds.Net
+namespace PlusCloudsNet
 {
     public class PlusClouds
     {

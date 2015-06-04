@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Response
+namespace PlusCloudsNet.Response
 {
     public abstract class BaseResponse
     {

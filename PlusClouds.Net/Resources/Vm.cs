@@ -1,8 +1,8 @@
-using PlusClouds.Net.Request.Vm;
-using PlusClouds.Net.Response.Vm;
+using PlusCloudsNet.Request.Vm;
+using PlusCloudsNet.Response.Vm;
 using RestSharp;
 
-namespace PlusClouds.Net.Resources
+namespace PlusCloudsNet.Resources
 {
     public class Vm : BaseResource
     {

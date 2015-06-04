@@ -1,6 +1,6 @@
-using PlusClouds.Net.Attributes;
+using PlusCloudsNet.Attributes;
 
-namespace PlusClouds.Net.Request.Products
+namespace PlusCloudsNet.Request.Products
 {
     public class PurchaseProductRequest : AccessTokenizedRequest
     {

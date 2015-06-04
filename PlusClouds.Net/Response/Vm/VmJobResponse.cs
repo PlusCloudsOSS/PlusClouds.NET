@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Response.Vm
+namespace PlusCloudsNet.Response.Vm
 {
     public class VmJobResponse : BaseResponse
     {

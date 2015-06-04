@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Models
+namespace PlusCloudsNet.Models
 {
     public class UserSession
     {

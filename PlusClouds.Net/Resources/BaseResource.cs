@@ -1,6 +1,6 @@
-using PlusClouds.Net.Response.Auth;
+using PlusCloudsNet.Response.Auth;
 
-namespace PlusClouds.Net.Resources
+namespace PlusCloudsNet.Resources
 {
     public abstract class BaseResource
     {

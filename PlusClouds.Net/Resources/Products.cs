@@ -1,8 +1,8 @@
-using PlusClouds.Net.Request.Products;
-using PlusClouds.Net.Response.Products;
+using PlusCloudsNet.Request.Products;
+using PlusCloudsNet.Response.Products;
 using RestSharp;
 
-namespace PlusClouds.Net.Resources
+namespace PlusCloudsNet.Resources
 {
     public class Products : BaseResource
     {

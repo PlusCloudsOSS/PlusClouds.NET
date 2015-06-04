@@ -1,6 +1,6 @@
 using System;
 
-namespace PlusClouds.Net.Response.Products
+namespace PlusCloudsNet.Response.Products
 {
     public class PurchaseProductResponse : BaseResponse
     {

@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.IO;
 
-namespace PlusClouds.Net.Tests
+namespace PlusCloudsNet.Tests
 {
     public static class Utility
     {

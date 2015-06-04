@@ -1,7 +1,7 @@
 using System;
-using PlusClouds.Net.Models;
+using PlusCloudsNet.Models;
 
-namespace PlusClouds.Net.Request.Users
+namespace PlusCloudsNet.Request.Users
 {
     public partial class UserUpdateRequest
     {

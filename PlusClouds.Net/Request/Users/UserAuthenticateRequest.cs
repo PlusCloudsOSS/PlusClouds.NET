@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Request.Users
+namespace PlusCloudsNet.Request.Users
 {
     public class UserAuthenticateRequest : AccessTokenizedRequest
     {

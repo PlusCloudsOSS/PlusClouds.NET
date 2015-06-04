@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Request.Auth
+namespace PlusCloudsNet.Request.Auth
 {
     public interface IAuthenticateRequest
     {

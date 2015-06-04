@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Request.Products
+namespace PlusCloudsNet.Request.Products
 {
     public class SimilarProductsRequest : BaseProductRequest
     {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using PlusClouds.Net.Attributes;
-using PlusClouds.Net.Request;
-using PlusClouds.Net.Response;
+using PlusCloudsNet.Attributes;
+using PlusCloudsNet.Request;
+using PlusCloudsNet.Response;
 using RestSharp;
 
-namespace PlusClouds.Net
+namespace PlusCloudsNet
 {
     internal static class Extensions
     {

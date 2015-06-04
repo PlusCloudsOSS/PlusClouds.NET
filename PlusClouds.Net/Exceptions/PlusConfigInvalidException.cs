@@ -1,6 +1,6 @@
 using System;
 
-namespace PlusClouds.Net.Exceptions
+namespace PlusCloudsNet.Exceptions
 {
     public class PlusConfigInvalidException : ArgumentException
     {

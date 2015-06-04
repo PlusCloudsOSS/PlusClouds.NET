@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Request
+namespace PlusCloudsNet.Request
 {
     public interface IPaginationRequest
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace PlusClouds.Net.Response.Vm
+namespace PlusCloudsNet.Response.Vm
 {
     public class VmConsoleInformationResponse : BaseResponse
     {

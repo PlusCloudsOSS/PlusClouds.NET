@@ -1,4 +1,4 @@
-namespace PlusClouds.Net.Request.Vm
+namespace PlusCloudsNet.Request.Vm
 {
     public class VmRebootRequest : VmJobRequest
     {
