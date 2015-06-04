@@ -13,8 +13,8 @@ namespace PlusCloudsNet
             CreateRestClient();
         }
 
-        public PlusClouds(string clientId, string clientSecret)
-            : this(new PlusCloudsConfig {ClientId = clientId, ClientSecret = clientSecret})
+        public PlusClouds(string clientId, string clientSecret, bool autoUpdateSession = false)
+            : this(new PlusCloudsConfig {ClientId = clientId, ClientSecret = clientSecret, AutoUpdateSession = autoUpdateSession})
         {
         }
 

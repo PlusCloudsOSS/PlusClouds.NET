@@ -5,7 +5,7 @@ namespace PlusCloudsNet.Response.Products
 {
     public class ProductsListResponse : BaseResponse
     {
-        public string CurrentLocale { get; set; }
+        public string Current_Locale { get; set; }
         public Dictionary<string, Product> Products { get; set; }
         public int RowCount { get; set; }
         public Pager Pager { get; set; }
@@ -36,14 +36,14 @@ namespace PlusCloudsNet.Response.Products
     {
         public Int64 Id { get; set; }
         public string Name { get; set; }
-        public string TaxOffice { get; set; }
-        public string TaxNumber { get; set; }
+        public string Tax_Office { get; set; }
+        public string Tax_Number { get; set; }
     }
 
     public class Vendor
     {
         public Int64 Id { get; set; }
-        public bool SysUser { get; set; }
+        public bool Sys_User { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string FullName { get; set; }
@@ -61,7 +61,7 @@ namespace PlusCloudsNet.Response.Products
         public int Cpu { get; set; }
         public int Ram { get; set; }
         public int Hdd { get; set; }
-        public string InMaintenance { get; set; }
+        public string In_Maintenance { get; set; }
     }
 
     public class Datacenter
@@ -69,10 +69,10 @@ namespace PlusCloudsNet.Response.Products
         public Int64 Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public Dictionary<string, PriceCurrency> CpuPrice { get; set; }
-        public Dictionary<string, PriceCurrency> RamPrice { get; set; }
-        public Dictionary<string, PriceCurrency> HddPrice { get; set; }
-        public Dictionary<string, PriceCurrency> BwPrice { get; set; }
+        public Dictionary<string, PriceCurrency> Cpu_Price { get; set; }
+        public Dictionary<string, PriceCurrency> Ram_Price { get; set; }
+        public Dictionary<string, PriceCurrency> Hdd_Price { get; set; }
+        public Dictionary<string, PriceCurrency> Bw_Price { get; set; }
     }
 
     public class Product
@@ -89,28 +89,29 @@ namespace PlusCloudsNet.Response.Products
         public string Ram { get; set; }
         public string Hdd { get; set; }
         public string Bw { get; set; }
-        public string TrialTime { get; set; }
-        public string IsResource { get; set; }
+        public string Trial_Time { get; set; }
+        public string Is_Resource { get; set; }
         public string ResourcesType { get; set; }
-        public string RatingTotal { get; set; }
-        public string RatingCount { get; set; }
-        public string PaymentType { get; set; }
-        public string ProductType { get; set; }
+        public string Resources_Type { get; set; }
+        public string Rating_Total { get; set; }
+        public string Rating_Count { get; set; }
+        public string Payment_Type { get; set; }
+        public string Product_Type { get; set; }
         public dynamic Options { get; set; }
-        public dynamic BrmFields { get; set; }
+        public dynamic Brm_Fields { get; set; }
         public Vendor Vendor { get; set; }
         public Template Template { get; set; }
         public string Description { get; set; }
         public string Details { get; set; }
-        public string SupportDescription { get; set; }
-        public string SupportDetails { get; set; }
+        public string Support_Description { get; set; }
+        public string Support_Details { get; set; }
         public string Highlights { get; set; }
-        public string RefundPolicy { get; set; }
+        public string Refund_Policy { get; set; }
         public string Eula { get; set; }
         public string Video { get; set; }
         public Datacenter Datacenter { get; set; }
         public Dictionary<string, string> Images { get; set; }
-        public bool IsApplicationServer { get; set; }
+        public bool Is_Application_Server { get; set; }
     }
 
     public class Pager

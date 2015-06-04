@@ -34,7 +34,16 @@ namespace PlusCloudsNet
         {
             var tokenizedRequest = request as AccessTokenizedRequest;
             if (tokenizedRequest != null)
+            {
+                if (client.Config.AutoUpdateSession)
+                {
+                    if (client.AuthenticateResponse == null || (!client.AuthenticateResponse.Result && client.AuthenticateResponse.Expires >= DateTime.Now.Ticks))
+                        client.Auth.Authenticate();
+                    client.Auth.AccessToken();
+                }
+
                 tokenizedRequest.AccessToken = client.AuthenticateResponse.AccessToken;
+            }
 
             return client.Execute<TResponse>(resource, method, request.CreateParameters(client.Config));
         }

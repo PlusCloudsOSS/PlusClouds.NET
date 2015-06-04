@@ -18,6 +18,7 @@ namespace PlusCloudsNet
         public Uri ServerUri { get; set; }
         public string ClientId { get; set; }
         public string ClientSecret { get; set; }
+        public bool AutoUpdateSession { get; set; }
 
         public bool IsValid()
         {
