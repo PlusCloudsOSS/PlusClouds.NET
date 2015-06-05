@@ -1,4 +1,3 @@
-using System;
 
 namespace PlusCloudsNet.Response.Vm
 {
@@ -16,8 +15,8 @@ namespace PlusCloudsNet.Response.Vm
 
     public class VmStatus
     {
-        public Int64 Id { get; set; }
-        public Int64 ServiceId { get; set; }
+        public long Id { get; set; }
+        public long ServiceId { get; set; }
         public string Status { get; set; }
     }
 }

@@ -69,7 +69,7 @@ namespace PlusCloudsNet.Tests
             var trialProduct = client.Products.List(new ProductsListRequest
             {
                 Limit = 300
-            }).Products.LastOrDefault(s => s.Value.TrialTime != null).Value;
+            }).Products.LastOrDefault(s => s.Value.Trial_Time != null).Value;
 
             if (trialProduct == null) return;
 

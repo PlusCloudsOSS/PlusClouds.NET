@@ -1,15 +1,11 @@
-using System;
 using PlusCloudsNet.Attributes;
 
 namespace PlusCloudsNet.Request.Vm
 {
-    public class VmListRequest : AccessTokenizedRequest, IPaginationRequest
+    public class VmListRequest : AccessTokenizedRequest, IPaginationRequest, IUserSessionRequest
     {
-        [Name("sid")]
-        public string SessionId { get; set; }
-
-        public Int64 Id { get; set; }
-        public Int64 GroupId { get; set; }
+        public long Id { get; set; }
+        public long GroupId { get; set; }
         public string Name { get; set; }
         public string Status { get; set; }
 
@@ -19,5 +15,8 @@ namespace PlusCloudsNet.Request.Vm
         public string OrderBy { get; set; }
         public int Page { get; set; }
         public int Limit { get; set; }
+
+        [Name("sid")]
+        public string SessionId { get; set; }
     }
 }

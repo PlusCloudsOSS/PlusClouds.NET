@@ -1,4 +1,3 @@
-using System;
 using PlusCloudsNet.Request.Products.Enums;
 
 namespace PlusCloudsNet.Request.Products
@@ -13,7 +12,7 @@ namespace PlusCloudsNet.Request.Products
         public ProductType ProductType { get; set; }
         public ResourceType ResourceType { get; set; }
         public int Memory { get; set; }
-        public Int64 VendorId { get; set; }
+        public long VendorId { get; set; }
         public Distribution Distribution { get; set; }
         public virtual int DatacenterId { get; set; }
         public int Page { get; set; }

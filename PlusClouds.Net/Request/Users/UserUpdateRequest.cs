@@ -3,11 +3,8 @@ using PlusCloudsNet.Attributes;
 
 namespace PlusCloudsNet.Request.Users
 {
-    public partial class UserUpdateRequest : AccessTokenizedRequest
+    public partial class UserUpdateRequest : AccessTokenizedRequest, IUserSessionRequest
     {
-        [Name("sid")]
-        public string SessionId { get; set; }
-
         public string Name { get; set; }
         public string Surname { get; set; }
 
@@ -18,12 +15,15 @@ namespace PlusCloudsNet.Request.Users
         public string Address { get; set; }
         public string Address2 { get; set; }
         public string City { get; set; }
-        public Int64 Country { get; set; }
+        public long Country { get; set; }
         public string ZipCode { get; set; }
         public string Phone { get; set; }
         public string CellPhone { get; set; }
         public string Twitter { get; set; }
         public string Facebook { get; set; }
         public string Linkedin { get; set; }
+
+        [Name("sid")]
+        public string SessionId { get; set; }
     }
 }

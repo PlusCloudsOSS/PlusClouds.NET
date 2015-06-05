@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace PlusCloudsNet.Response.Products
@@ -34,7 +33,7 @@ namespace PlusCloudsNet.Response.Products
 
     public class Company
     {
-        public Int64 Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Tax_Office { get; set; }
         public string Tax_Number { get; set; }
@@ -42,7 +41,7 @@ namespace PlusCloudsNet.Response.Products
 
     public class Vendor
     {
-        public Int64 Id { get; set; }
+        public long Id { get; set; }
         public bool Sys_User { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -54,7 +53,7 @@ namespace PlusCloudsNet.Response.Products
 
     public class Template
     {
-        public Int64 Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public string Distribution { get; set; }
@@ -66,7 +65,7 @@ namespace PlusCloudsNet.Response.Products
 
     public class Datacenter
     {
-        public Int64 Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public Dictionary<string, PriceCurrency> Cpu_Price { get; set; }
@@ -77,7 +76,7 @@ namespace PlusCloudsNet.Response.Products
 
     public class Product
     {
-        public Int64 Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Slug { get; set; }
         public Price Price { get; set; }

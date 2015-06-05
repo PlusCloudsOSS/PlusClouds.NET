@@ -20,14 +20,23 @@ namespace PlusCloudsNet.Resources
         {
         }
 
+        public UserSession UserSession { get; set; }
+
         public UserAuthenticateResponse Authenticate(UserAuthenticateRequest userAuthenticateRequest)
         {
-            return PlusClouds.Execute<UserAuthenticateResponse>(authenticate, Method.POST, userAuthenticateRequest);
+            var response = PlusClouds.Execute<UserAuthenticateResponse>(authenticate, Method.POST,
+                userAuthenticateRequest);
+            if (response.Result)
+                UserSession = response.Session;
+            return response;
         }
 
         public UserSessionResponse GetSession(UserGetSessionRequest userGetSessionRequest)
         {
-            return PlusClouds.Execute<UserSessionResponse>(getSession, Method.GET, userGetSessionRequest);
+            var response = PlusClouds.Execute<UserSessionResponse>(getSession, Method.GET, userGetSessionRequest);
+            if (response.Result)
+                UserSession = response.Session;
+            return response;
         }
 
         public bool DestroySession()

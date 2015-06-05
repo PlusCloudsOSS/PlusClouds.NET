@@ -16,9 +16,12 @@ namespace PlusCloudsNet
         public string DateTimeFormat { get; set; }
         public string NumberFormat { get; set; }
         public Uri ServerUri { get; set; }
+        public bool AutoUpdateSession { get; set; }
+        public bool AutoUpdateUserLogin { get; set; }
+        public string UserEmail { get; set; }
+        public string Password { get; set; }
         public string ClientId { get; set; }
         public string ClientSecret { get; set; }
-        public bool AutoUpdateSession { get; set; }
 
         public bool IsValid()
         {

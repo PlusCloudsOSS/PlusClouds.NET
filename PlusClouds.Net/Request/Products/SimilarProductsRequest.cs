@@ -4,6 +4,6 @@ namespace PlusCloudsNet.Request.Products
 {
     public class SimilarProductsRequest : BaseProductRequest
     {
-        public Int64 Id { get; set; }
+        public long Id { get; set; }
     }
 }

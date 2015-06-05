@@ -7,7 +7,7 @@
     <ProjectGuid>{37F02129-BB18-40EC-B601-2574FD0DF77F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PlusClouds.Net</RootNamespace>
+    <RootNamespace>PlusCloudsNet</RootNamespace>
     <AssemblyName>PlusClouds.Net</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
+      <HintPath>..\packages\RestSharp.105.1.0\lib\net45\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -50,8 +50,9 @@
     <Compile Include="Request\Products\Enums\PaymentType.cs" />
     <Compile Include="Request\Products\Enums\ProductType.cs" />
     <Compile Include="Request\Products\Enums\ResourceType.cs" />
-    <Compile Include="PlusCloudsExtensions.cs" />
+    <Compile Include="RequestManager.cs" />
     <Compile Include="Request\AccessTokenizedRequest.cs" />
+    <Compile Include="Request\IUserSessionRequest.cs" />
     <Compile Include="Request\Users\UserGetSessionRequest.cs" />
     <Compile Include="Request\Users\UserUpdateRequest.Operators.cs" />
     <Compile Include="Request\IPaginationRequest.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Request\Vm\VmChangePasswordRequest.cs" />
     <Compile Include="Request\Vm\VmChangeServerNameRequest.cs" />
     <Compile Include="Request\Vm\VmAddIpRequest.cs" />
+    <Compile Include="Response\IAuthResponse.cs" />
     <Compile Include="Response\Vm\VmConsoleInformationResponse.cs" />
     <Compile Include="Response\Vm\VmListResponse.cs" />
     <Compile Include="Response\Vm\VmJobResponse.cs" />
@@ -105,6 +107,7 @@
     <Compile Include="Models\UserDefinition.cs" />
     <Compile Include="Models\UserSession.cs" />
     <Compile Include="Response\Users\UserSessionResponse.cs" />
+    <Compile Include="UnixTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

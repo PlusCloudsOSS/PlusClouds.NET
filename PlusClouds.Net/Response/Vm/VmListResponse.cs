@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using PlusCloudsNet.Response.Products;
 
@@ -29,8 +28,8 @@ namespace PlusCloudsNet.Response.Vm
         public dynamic Features { get; set; }
         public bool Pv { get; set; }
         public Dictionary<string, ServerProduct> Products { get; set; }
-        public Int64 Virtual_Machine_Groups_Id { get; set; }
-        public Int64 Monitoring_Id { get; set; }
+        public long Virtual_Machine_Groups_Id { get; set; }
+        public long Monitoring_Id { get; set; }
         public string Dns_Record_Id { get; set; }
         public Template Template { get; set; }
         public Datacenter Datacenter { get; set; }
