@@ -1,3 +1,4 @@
+using PlusCloudsNet.Models;
 using PlusCloudsNet.Request.Users;
 using PlusCloudsNet.Response.Shared;
 using PlusCloudsNet.Response.Users;
